@@ -1,0 +1,4 @@
+emp003,bkhatib,20180802,male,1000
+emp002,ahaddad,20211120,female,1400
+emp001,hyassine,20160630,male,2000
+emp004,pmasri,20230821,female,900

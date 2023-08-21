@@ -1,6 +1,7 @@
 def Sort_by_ID(sub_list):
   new_list= sorted(sub_list, key = lambda x: x[0])
   return new_list
+  #Source [after customization to suite the problem]: https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/
 
 def Sort_by_Date(sub_list):
   new_list= sorted(sub_list, key = lambda x: x[2], reverse=True)
@@ -15,7 +16,8 @@ def load_data():
   with open('Employee Database.txt') as f:
     database = f.readlines()
   f.close()
-
+  #Source [after customization to suite the problem]:https://www.pythontutorial.net/python-basics/python-read-text-file/
+  
   for i in database:
     datalines= i.splitlines()
     emp_data=datalines[0].split(',')
@@ -49,6 +51,8 @@ def add():
   from datetime import date
   today = date.today()
   joining_date=str(today).replace("-","")
+  #Source [after customization to suite the problem]: https://www.geeksforgeeks.org/get-current-date-using-python/
+
 
   last_emp_id=sorted_id[-1][0]
   last_id=int(last_emp_id[-3:])
@@ -154,7 +158,7 @@ def exit():
     for item in emp_unsorted:
             file.write(",".join(map(str,item)))
             file.write("\n")
-
+#Source [after customization to suite the problem]:https://www.jquery-az.com/3-ways-convert-python-list-string-join-map-str/
   pass
 
   

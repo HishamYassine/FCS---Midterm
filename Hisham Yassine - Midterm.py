@@ -91,7 +91,7 @@ def change():
   emp=input("\nPlease enter the ID of the employee that you want to change his/her salary:  ")
   user_found=False
   for i in emp_unsorted:
-    if emp==i[1]:
+    if emp==i[0]:
       new_sal=input("Please enter the new salary:  ")
       i[4]=new_sal
       user_found=True
@@ -106,9 +106,47 @@ def change():
   pass
 
 def remove():
+  print("Let's remove some employees from the database")
+  emp_id=input("Please enter the ID of the employee you want to remove:  ")
+
+  user_found==False
+
+  for i in emp_unsorted:
+    if emp_id==i[0]:
+      emp_unsorted.remove(i)
+      user_found=True
+      print("Employee Removed Successfully!")
+
+  if user_found==False:
+    print("No Employee has this ID\n")
+  
+  print("\nYou will be re-directed to the main menu again")
+  admin()
+
   pass
 
 def raising():
+  print("Yes! It's time to have some raises")
+  emp_id=input("Please enter the ID of the employee you want to raise their salary:  ")
+  
+
+  user_found=False
+
+  for i in emp_unsorted:
+    if emp_id==i[0]:
+      percentage=input("What is the percentage of the raise?  ")    
+      user_found=True
+      original_salary=int(i[4])
+      new_salary=original_salary*percentage
+      i[4]=str(new_salary)
+      print("The Salary is raised Successfully!")
+
+  if user_found==False:
+    print("No Employee has this ID\n")
+  
+  print("\nYou will be re-directed to the main menu again")
+  admin()
+
   pass
 
 def exit():

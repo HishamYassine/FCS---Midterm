@@ -157,8 +157,6 @@ def exit():
 
   pass
 
-def salary_check():
-  pass
   
 
 def admin():
@@ -182,11 +180,14 @@ def admin():
     print("Invalid Entry\n")
     admin()
 
-def user_access():
+def user_access(employee):
   user_option = int(input("\n\nPlease choose the required operation:\n1. Check My Salary\n2. Exit\n\n"))
 
   if user_option==1:
-    salary_check()
+    for i in emp_unsorted:
+      if i[1]==employee:
+        print("Your Salary is: ", i[4])
+        print("Have a Good Day :) \n\n") 
   else:
     booting()
 
@@ -207,7 +208,7 @@ def welcome():
       for i in emp_unsorted:  
           if i[1]==user:
              user_found=True
-             user_access() 
+             user_access(user)
              break
       if user_found==False:
         print("This username is not available. Please enter a valid username")

@@ -12,7 +12,7 @@ sorted_id=[]
 sorted_date=[]
 
 
-def load_data(): # Time Complexity: O(1) - Altough we are iterating through a loop but this is not based on the user's input
+def load_data(): # Time Complexity: O(1) - Although we are iterating through a loop but this is not based on the user's input
   with open('Employee Database.txt') as f:
     database = f.readlines()
   f.close()
@@ -32,7 +32,7 @@ def booting(): # Time Complexity: O(1)
     welcome()
 
 
-def display(): # Time Complexity: O(1) - Altough we are iterating through a loop but this is not based on the user's input
+def display(): # Time Complexity: O(1) - Although we are iterating through a loop but this is not based on the user's input
   male_count=0
   female_count=0
 

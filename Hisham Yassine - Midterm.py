@@ -1,9 +1,9 @@
-def Sort_by_ID(sub_list):
+def Sort_by_ID(sub_list): # Time Complexity: O(1)
   new_list= sorted(sub_list, key = lambda x: x[0])
   return new_list
   #Source [after customization to suite the problem]: https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/
 
-def Sort_by_Date(sub_list):
+def Sort_by_Date(sub_list): # Time Complexity: O(1)
   new_list= sorted(sub_list, key = lambda x: x[2], reverse=True)
   return new_list
 
@@ -12,7 +12,7 @@ sorted_id=[]
 sorted_date=[]
 
 
-def load_data():
+def load_data(): # Time Complexity: O(1) - Altough we are iterating through a loop but this is not based on the user's input
   with open('Employee Database.txt') as f:
     database = f.readlines()
   f.close()
@@ -26,13 +26,13 @@ def load_data():
   return emp_unsorted
 
   
-def booting():
+def booting(): # Time Complexity: O(1)
   start=input("Hello! Do you want to access the Employees Database System? [Yes/No]  ")
   if start == "Yes":
     welcome()
 
 
-def display():
+def display(): # Time Complexity: O(1) - Altough we are iterating through a loop but this is not based on the user's input
   male_count=0
   female_count=0
 
@@ -47,7 +47,7 @@ def display():
   admin()
   pass
 
-def add():
+def add(): # Time Complexity: O(1)
   from datetime import date
   today = date.today()
   joining_date=str(today).replace("-","")
@@ -82,7 +82,7 @@ def add():
   
 
 
-def all():
+def all(): # Time Complexity: O(1)
   print("Here is the list of all employees (from newest to oldest in company):\n")
   for i in sorted_date:
     print("Employee ID: ",i[0]," Employee username: ",i[1]," Date of Joining [YYYYMMDD]: ",i[2]," Employee Sex: ",i[3]," Employee's Salary: ",i[4])
@@ -91,7 +91,7 @@ def all():
   admin()
   pass
 
-def change():
+def change(): # Time Complexity: O(n)
   emp=input("\nPlease enter the ID of the employee that you want to change his/her salary:  ")
   user_found=False
   for i in emp_unsorted:
@@ -109,7 +109,7 @@ def change():
   admin()
   pass
 
-def remove():
+def remove(): # Time Complexity: O(n)
   print("Let's remove some employees from the database")
   emp_id=input("Please enter the ID of the employee you want to remove:  ")
 
@@ -129,7 +129,7 @@ def remove():
 
   pass
 
-def raising():
+def raising(): # Time Complexity: O(n)
   print("Yes! It's time to have some raises")
   emp_id=input("Please enter the ID of the employee you want to raise their salary:  ")
   
@@ -153,7 +153,7 @@ def raising():
 
   pass
 
-def exit():
+def exit(): # Time Complexity: O(1)
   with open('Employee Database.txt', 'w') as file:
     for item in emp_unsorted:
             file.write(",".join(map(str,item)))
@@ -163,7 +163,7 @@ def exit():
 
   
 
-def admin():
+def admin(): # Time Complexity: O(1)
   admin_option = int(input("\n\nPlease choose the required operation:\n1. Display Statistics\n2. Add an Employee\n3. Display all Employees\n4. Change Employee's Salary\n5. Remove Employee\n6. Raise Employee's Salary\n7. Exit\n\n"))
   
   if admin_option ==1:
@@ -184,7 +184,7 @@ def admin():
     print("Invalid Entry\n")
     admin()
 
-def user_access(employee):
+def user_access(employee): # Time Complexity: O(n)
   user_option = int(input("\n\nPlease choose the required operation:\n1. Check My Salary\n2. Exit\n\n"))
 
   if user_option==1:
@@ -196,7 +196,7 @@ def user_access(employee):
     booting()
 
 
-def welcome():
+def welcome(): # Time Complexity: O(n)
   
   print("Welcome to the Employees Database System!\n\nPlease login to continue")
   user=input("Enter Your Username:  ")
@@ -224,7 +224,7 @@ def welcome():
 
 
 
-while 1:
+while 1: # Time Complexity: O(1)
   emp_unsorted=load_data()
   sorted_id=Sort_by_ID(emp_unsorted)
   sorted_date=Sort_by_Date(emp_unsorted)
